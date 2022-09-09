@@ -1,0 +1,23 @@
+{
+  "kmb": {
+    "routes": "https://data.etabus.gov.hk/v1/transport/kmb/route/",
+    "stops": "https://data.etabus.gov.hk/v1/transport/kmb/stop/",
+    "name": "https://data.etabus.gov.hk/v1/transport/kmb/route-stop/",
+    "eta" : "https://data.etabus.gov.hk/v1/transport/kmb/eta/"
+  },
+  "nwfb": {
+    "routes": "https://rt.data.gov.hk/v1/transport/citybus-nwfb/route/NWFB/",
+    "stop": "https://rt.data.gov.hk/v1/transport/citybus-nwfb/route-stop/NWFB/",
+    "name": "https://rt.data.gov.hk/v1/transport/citybus-nwfb/stop/",
+    "eta" : "https://rt.data.gov.hk/v1/transport/citybus-nwfb/eta/NWFB/"
+  },
+  "ctb": {
+    "routes": "https://rt.data.gov.hk/v1/transport/citybus-nwfb/route/CTB/",
+    "stop": "https://rt.data.gov.hk/v1/transport/citybus-nwfb/route-stop/CTB/",
+    "name": "https://rt.data.gov.hk/v1/transport/citybus-nwfb/stop/",
+    "eta" : "https://rt.data.gov.hk/v1/transport/citybus-nwfb/eta/CTB/"
+  },
+  "mtr": {
+    "eta" : "https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?"
+  }
+}
