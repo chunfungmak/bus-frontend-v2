@@ -1,69 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
-import { NearByPage } from './pages'
-import { Box, Tab, Tabs, Typography } from '@mui/material'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import { useSelector } from 'react-redux'
+import { StateModel } from '../store/model/state.model'
+import { Theme } from '../constant'
+import { TabView } from './pages/tab.view'
+import { store } from '../store'
+import { StateAction } from '../store/reducer'
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark'
-  }
-})
+export function App (): JSX.Element {
+  const state = useSelector((state: StateModel) => state)
 
-interface TabPanelProps {
-  children?: React.ReactNode
-  index: number
-  value: number
-}
+  useEffect(() => {
+    store.dispatch({
+      type: StateAction.SET_GEOLOCATION,
+      data: null
+    })
 
-function TabPanel (props: TabPanelProps): JSX.Element {
-  const { children, value, index, ...other } = props
+    const watchID = navigator.geolocation.watchPosition(function (position) {
+      store.dispatch({
+        type: StateAction.SET_GEOLOCATION,
+        data: { lat: position.coords.latitude, long: position.coords.longitude }
+      })
+    })
 
-  return (
-      <div
-          role="tabpanel"
-          hidden={value !== index}
-          id={`simple-tabpanel-${index}`}
-          aria-labelledby={`simple-tab-${index}`}
-          {...other}
-      >
-        {value === index && (
-            <Box sx={{ p: 3 }}>
-              <Typography>{children}</Typography>
-            </Box>
-        )}
-      </div>
-  )
-}
-
-function a11yProps (index: number): Record<string, string> {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`
-  }
-}
-
-function App (): JSX.Element {
-  const [value, setValue] = React.useState(0)
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number): void => {
-    setValue(newValue)
-  }
+    return () => {
+      navigator.geolocation.clearWatch(watchID)
+    }
+  }, [])
 
   return <>
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={createTheme({
+      palette: {
+        mode: state.theme === Theme.DARK ? 'dark' : 'light'
+      }
+    })}>
       <CssBaseline />
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Near By" {...a11yProps(0)} />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-        <NearByPage />
-      </TabPanel>
+      <TabView />
     </ThemeProvider>
   </>
 }
-
-export default App
