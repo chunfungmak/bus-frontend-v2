@@ -1,0 +1,97 @@
+[{
+  "route": "AEL",
+  "route_en": "Airport Express",
+  "route_tc": "機場快綫",
+  "bound": "UP",
+  "service_type": "1",
+  "orig_en": "Hong Kong",
+  "orig_tc": "香港",
+  "dest_en": "AsiaWorld Expo",
+  "dest_tc": "博覽館",
+  "co": "MTR"
+},
+  {
+    "route": "AEL",
+    "route_en": "Airport Express",
+    "route_tc": "機場快綫",
+    "bound": "DOWN",
+    "service_type": "1",
+    "orig_en": "AsiaWorld Expo",
+    "orig_tc": "博覽館",
+    "dest_en": "Hong Kong",
+    "dest_tc": "香港",
+    "co": "MTR"
+  },
+  {
+    "route": "TCL",
+    "route_en": "Tung Chung Line",
+    "route_tc": "東涌綫",
+    "bound": "UP",
+    "service_type": "1",
+    "orig_en": "Hong Kong",
+    "orig_tc": "香港",
+    "dest_en": "Tung Chung",
+    "dest_tc": "東涌",
+    "co": "MTR"
+  },
+  {
+    "route": "TCL",
+    "route_en": "Tung Chung Line",
+    "route_tc": "東涌綫",
+    "bound": "DOWN",
+    "service_type": "1",
+    "orig_en": "Tung Chung",
+    "orig_tc": "東涌",
+    "dest_en": "Hong Kong",
+    "dest_tc": "香港",
+    "co": "MTR"
+  },
+  {
+    "route": "TML",
+    "route_en": "Tuen Ma Line",
+    "route_tc": "屯馬綫",
+    "bound": "UP",
+    "service_type": "1",
+    "orig_en": "Tuen Mun",
+    "orig_tc": "烏溪沙",
+    "dest_en": "Wu Kai Sha",
+    "dest_tc": "香港",
+    "co": "MTR"
+  },
+  {
+    "route": "TML",
+    "route_en": "Tuen Ma Line",
+    "route_tc": "屯馬綫",
+    "bound": "DOWN",
+    "service_type": "1",
+    "orig_en": "Wu Kai Sha",
+    "orig_tc": "香港",
+    "dest_en": "Tuen Mun",
+    "dest_tc": "烏溪沙",
+    "co": "MTR"
+  },
+  {
+    "route": "TKL",
+    "route_en": "Tseung Kwan O Line",
+    "route_tc": "將軍澳綫",
+    "bound": "UP",
+    "service_type": "1",
+    "orig_en": "Tiu Keng Leng",
+    "orig_tc": "北角",
+    "dest_en": "Po Lam",
+    "dest_tc": "寶琳",
+    "co": "MTR"
+  },
+  {
+    "route": "TKL",
+    "route_en": "Tseung Kwan O Line",
+    "route_tc": "將軍澳綫",
+    "bound": "DOWN",
+    "service_type": "1",
+    "orig_en": "Po Lam",
+    "orig_tc": "寶琳",
+    "dest_en": "Tiu Keng Leng",
+    "dest_tc": "北角",
+    "co": "MTR"
+  }
+]

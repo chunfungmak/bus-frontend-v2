@@ -1,0 +1,994 @@
+{
+  "AEL": {
+    "UP": {
+      "1": [{
+        "bound": "UP",
+        "co": "MTR",
+        "name_en": "Hong Kong",
+        "name_tc": "香港",
+        "route": "AEL",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "HOK"
+      },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Kowloon",
+          "name_tc": "九龍",
+          "route": "AEL",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "KOW"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tsing Yi",
+          "name_tc": "青衣",
+          "route": "AEL",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "TSY"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Airport",
+          "name_tc": "機場",
+          "route": "AEL",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "AIR"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "AsiaWorld Expo",
+          "name_tc": "博覽館",
+          "route": "AEL",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "AWE"
+        }
+      ]
+    },
+    "DOWN": {
+      "1": [{
+        "bound": "DOWN",
+        "co": "MTR",
+        "name_en": "AsiaWorld Expo",
+        "name_tc": "博覽館",
+        "route": "AEL",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "AWE"
+      },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Airport",
+          "name_tc": "機場",
+          "route": "AEL",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "AIR"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tsing Yi",
+          "name_tc": "青衣",
+          "route": "AEL",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "TSY"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Kowloon",
+          "name_tc": "九龍",
+          "route": "AEL",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "KOW"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Hong Kong",
+          "name_tc": "香港",
+          "route": "AEL",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "HOK"
+        }
+      ]
+    }
+  },
+  "TCL": {
+    "UP": {
+      "1": [{
+        "bound": "UP",
+        "co": "MTR",
+        "name_en": "Hong Kong",
+        "name_tc": "香港",
+        "route": "TCL",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "HOK"
+      },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Kowloon",
+          "name_tc": "九龍",
+          "route": "TCL",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "KOW"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Olympic",
+          "name_tc": "奧運",
+          "route": "TCL",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "OLY"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Nam Cheong",
+          "name_tc": "南昌",
+          "route": "TCL",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "NAC"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Lai King",
+          "name_tc": "茘景",
+          "route": "TCL",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "LAK"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tsing Yi",
+          "name_tc": "青衣",
+          "route": "TCL",
+          "seq": "6",
+          "service_type": "1",
+          "stop": "TSY"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Sunny Bay",
+          "name_tc": "欣澳",
+          "route": "TCL",
+          "seq": "7",
+          "service_type": "1",
+          "stop": "SUN"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tung Chung",
+          "name_tc": "東涌",
+          "route": "TCL",
+          "seq": "8",
+          "service_type": "1",
+          "stop": "TUC"
+        }
+      ]
+    },
+    "DOWN": {
+      "1": [{
+        "bound": "DOWN",
+        "co": "MTR",
+        "name_en": "Tung Chung",
+        "name_tc": "東涌",
+        "route": "TCL",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "TUC"
+      },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Sunny Bay",
+          "name_tc": "欣澳",
+          "route": "TCL",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "SUN"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tsing Yi",
+          "name_tc": "青衣",
+          "route": "TCL",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "TSY"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Lai King",
+          "name_tc": "茘景",
+          "route": "TCL",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "LAK"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Nam Cheong",
+          "name_tc": "南昌",
+          "route": "TCL",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "NAC"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Olympic",
+          "name_tc": "奧運",
+          "route": "TCL",
+          "seq": "6",
+          "service_type": "1",
+          "stop": "OLY"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Kowloon",
+          "name_tc": "九龍",
+          "route": "TCL",
+          "seq": "7",
+          "service_type": "1",
+          "stop": "KOW"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Hong Kong",
+          "name_tc": "香港",
+          "route": "TCL",
+          "seq": "8",
+          "service_type": "1",
+          "stop": "HOK"
+        }
+      ]
+    }
+  },
+  "TML": {
+    "UP": {
+      "1": [{
+        "bound": "UP",
+        "co": "MTR",
+        "name_en": "Wu Kai Sha",
+        "name_tc": "烏溪沙",
+        "route": "TML",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "WKS"
+      },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Ma On Shan",
+          "name_tc": "馬鞍山",
+          "route": "TML",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "MOS"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Heng On",
+          "name_tc": "恆安",
+          "route": "TML",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "HEO"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tai Shui Hang",
+          "name_tc": "大水坑",
+          "route": "TML",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "TSH"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Shek Mun",
+          "name_tc": "石門",
+          "route": "TML",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "SHM"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "City One",
+          "name_tc": "第一城",
+          "route": "TML",
+          "seq": "6",
+          "service_type": "1",
+          "stop": "CIO"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Sha Tin Wai",
+          "name_tc": "沙田圍",
+          "route": "TML",
+          "seq": "7",
+          "service_type": "1",
+          "stop": "STW"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Che Kung Temple",
+          "name_tc": "車公廟",
+          "route": "TML",
+          "seq": "8",
+          "service_type": "1",
+          "stop": "CKT"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tai Wai",
+          "name_tc": "大圍",
+          "route": "TML",
+          "seq": "9",
+          "service_type": "1",
+          "stop": "TAW"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Hin Keng",
+          "name_tc": "顯徑",
+          "route": "TML",
+          "seq": "10",
+          "service_type": "1",
+          "stop": "HIK"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Diamond Hill",
+          "name_tc": "鑽石山",
+          "route": "TML",
+          "seq": "11",
+          "service_type": "1",
+          "stop": "DIH"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Kai Tak",
+          "name_tc": "啟德",
+          "route": "TML",
+          "seq": "12",
+          "service_type": "1",
+          "stop": "KAT"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Sung Wong Toi",
+          "name_tc": "宋皇臺",
+          "route": "TML",
+          "seq": "13",
+          "service_type": "1",
+          "stop": "SUW"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "To Kwa Wan",
+          "name_tc": "土瓜灣",
+          "route": "TML",
+          "seq": "14",
+          "service_type": "1",
+          "stop": "TKW"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Ho Man Tin",
+          "name_tc": "何文田",
+          "route": "TML",
+          "seq": "15",
+          "service_type": "1",
+          "stop": "HOM"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Hung Hom",
+          "name_tc": "紅磡",
+          "route": "TML",
+          "seq": "16",
+          "service_type": "1",
+          "stop": "HUH"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "East Tsim Sha Tsui",
+          "name_tc": "尖東",
+          "route": "TML",
+          "seq": "17",
+          "service_type": "1",
+          "stop": "ETS"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Austin",
+          "name_tc": "柯士甸",
+          "route": "TML",
+          "seq": "18",
+          "service_type": "1",
+          "stop": "AUS"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Nam Cheong",
+          "name_tc": "南昌",
+          "route": "TML",
+          "seq": "19",
+          "service_type": "1",
+          "stop": "NAC"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Mei Foo",
+          "name_tc": "美孚",
+          "route": "TML",
+          "seq": "20",
+          "service_type": "1",
+          "stop": "MEF"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tsuen Wan West",
+          "name_tc": "荃灣西",
+          "route": "TML",
+          "seq": "21",
+          "service_type": "1",
+          "stop": "TWW"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Kam Shueng Road",
+          "name_tc": "錦上路",
+          "route": "TML",
+          "seq": "22",
+          "service_type": "1",
+          "stop": "KSR"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Yuen Long",
+          "name_tc": "元朗",
+          "route": "TML",
+          "seq": "23",
+          "service_type": "1",
+          "stop": "YUL"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Long Ping",
+          "name_tc": "朗屏",
+          "route": "TML",
+          "seq": "24",
+          "service_type": "1",
+          "stop": "LOP"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tin Shui Wai",
+          "name_tc": "天水圍",
+          "route": "TML",
+          "seq": "25",
+          "service_type": "1",
+          "stop": "TIS"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Siu Hong",
+          "name_tc": "兆康",
+          "route": "TML",
+          "seq": "26",
+          "service_type": "1",
+          "stop": "SIH"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tuen Mun",
+          "name_tc": "屯門",
+          "route": "TML",
+          "seq": "27",
+          "service_type": "1",
+          "stop": "TUM"
+        }
+      ]
+    },
+    "DOWN": {
+      "1": [{
+        "bound": "DOWN",
+        "co": "MTR",
+        "name_en": "Tuen Mun",
+        "name_tc": "屯門",
+        "route": "TML",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "TUM"
+      },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Siu Hong",
+          "name_tc": "兆康",
+          "route": "TML",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "SIH"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tin Shui Wai",
+          "name_tc": "天水圍",
+          "route": "TML",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "TIS"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Long Ping",
+          "name_tc": "朗屏",
+          "route": "TML",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "LOP"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Yuen Long",
+          "name_tc": "元朗",
+          "route": "TML",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "YUL"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Kam Shueng Road",
+          "name_tc": "錦上路",
+          "route": "TML",
+          "seq": "6",
+          "service_type": "1",
+          "stop": "KSR"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tsuen Wan West",
+          "name_tc": "荃灣西",
+          "route": "TML",
+          "seq": "7",
+          "service_type": "1",
+          "stop": "TWW"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Mei Foo",
+          "name_tc": "美孚",
+          "route": "TML",
+          "seq": "8",
+          "service_type": "1",
+          "stop": "MEF"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Nam Cheong",
+          "name_tc": "南昌",
+          "route": "TML",
+          "seq": "9",
+          "service_type": "1",
+          "stop": "NAC"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Austin",
+          "name_tc": "柯士甸",
+          "route": "TML",
+          "seq": "10",
+          "service_type": "1",
+          "stop": "AUS"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "East Tsim Sha Tsui",
+          "name_tc": "尖東",
+          "route": "TML",
+          "seq": "11",
+          "service_type": "1",
+          "stop": "ETS"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Hung Hom",
+          "name_tc": "紅磡",
+          "route": "TML",
+          "seq": "12",
+          "service_type": "1",
+          "stop": "HUH"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Ho Man Tin",
+          "name_tc": "何文田",
+          "route": "TML",
+          "seq": "13",
+          "service_type": "1",
+          "stop": "HOM"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "To Kwa Wan",
+          "name_tc": "土瓜灣",
+          "route": "TML",
+          "seq": "14",
+          "service_type": "1",
+          "stop": "TKW"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Sung Wong Toi",
+          "name_tc": "宋皇臺",
+          "route": "TML",
+          "seq": "15",
+          "service_type": "1",
+          "stop": "SUW"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Kai Tak",
+          "name_tc": "啟德",
+          "route": "TML",
+          "seq": "16",
+          "service_type": "1",
+          "stop": "KAT"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Diamond Hill",
+          "name_tc": "鑽石山",
+          "route": "TML",
+          "seq": "17",
+          "service_type": "1",
+          "stop": "DIH"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Hin Keng",
+          "name_tc": "顯徑",
+          "route": "TML",
+          "seq": "18",
+          "service_type": "1",
+          "stop": "HIK"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tai Wai",
+          "name_tc": "大圍",
+          "route": "TML",
+          "seq": "19",
+          "service_type": "1",
+          "stop": "TAW"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Che Kung Temple",
+          "name_tc": "車公廟",
+          "route": "TML",
+          "seq": "20",
+          "service_type": "1",
+          "stop": "CKT"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Sha Tin Wai",
+          "name_tc": "沙田圍",
+          "route": "TML",
+          "seq": "21",
+          "service_type": "1",
+          "stop": "STW"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "City One",
+          "name_tc": "第一城",
+          "route": "TML",
+          "seq": "22",
+          "service_type": "1",
+          "stop": "CIO"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Shek Mun",
+          "name_tc": "石門",
+          "route": "TML",
+          "seq": "23",
+          "service_type": "1",
+          "stop": "SHM"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tai Shui Hang",
+          "name_tc": "大水坑",
+          "route": "TML",
+          "seq": "24",
+          "service_type": "1",
+          "stop": "TSH"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Heng On",
+          "name_tc": "恆安",
+          "route": "TML",
+          "seq": "25",
+          "service_type": "1",
+          "stop": "HEO"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Ma On Shan",
+          "name_tc": "馬鞍山",
+          "route": "TML",
+          "seq": "26",
+          "service_type": "1",
+          "stop": "MOS"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Wu Kai Sha",
+          "name_tc": "烏溪沙",
+          "route": "TML",
+          "seq": "27",
+          "service_type": "1",
+          "stop": "WKS"
+        }
+      ]
+    }
+  },
+  "TKL": {
+    "UP": {
+      "1": [{
+        "bound": "UP",
+        "co": "MTR",
+        "name_en": "North Point",
+        "name_tc": "北角",
+        "route": "TKL",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "NOP"
+      },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Quarry Bay",
+          "name_tc": "鰂魚涌",
+          "route": "TKL",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "QUB"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Yau Tong",
+          "name_tc": "油塘",
+          "route": "TKL",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "YAT"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tiu Keng Leng",
+          "name_tc": "調景嶺",
+          "route": "TKL",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "TIK"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Tseung Kwan O",
+          "name_tc": "將軍澳",
+          "route": "TKL",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "TKO"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "LOHAS Park",
+          "name_tc": "康城",
+          "route": "TKL",
+          "seq": "6",
+          "service_type": "1",
+          "stop": "LHP"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Hang Hau",
+          "name_tc": "坑口",
+          "route": "TKL",
+          "seq": "7",
+          "service_type": "1",
+          "stop": "HAH"
+        },
+        {
+          "bound": "UP",
+          "co": "MTR",
+          "name_en": "Po Lam",
+          "name_tc": "寶琳",
+          "route": "TKL",
+          "seq": "8",
+          "service_type": "1",
+          "stop": "POA"
+        }
+      ]
+    },
+    "DOWN": {
+      "1": [{
+        "bound": "DOWN",
+        "co": "MTR",
+        "name_en": "Po Lam",
+        "name_tc": "寶琳",
+        "route": "TKL",
+        "seq": "1",
+        "service_type": "1",
+        "stop": "POA"
+      },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Hang Hau",
+          "name_tc": "坑口",
+          "route": "TKL",
+          "seq": "2",
+          "service_type": "1",
+          "stop": "HAH"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "LOHAS Park",
+          "name_tc": "康城",
+          "route": "TKL",
+          "seq": "3",
+          "service_type": "1",
+          "stop": "LHP"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tseung Kwan O",
+          "name_tc": "將軍澳",
+          "route": "TKL",
+          "seq": "4",
+          "service_type": "1",
+          "stop": "TKO"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Tiu Keng Leng",
+          "name_tc": "調景嶺",
+          "route": "TKL",
+          "seq": "5",
+          "service_type": "1",
+          "stop": "TIK"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Yau Tong",
+          "name_tc": "油塘",
+          "route": "TKL",
+          "seq": "6",
+          "service_type": "1",
+          "stop": "YAT"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "Quarry Bay",
+          "name_tc": "鰂魚涌",
+          "route": "TKL",
+          "seq": "7",
+          "service_type": "1",
+          "stop": "QUB"
+        },
+        {
+          "bound": "DOWN",
+          "co": "MTR",
+          "name_en": "North Point",
+          "name_tc": "北角",
+          "route": "TKL",
+          "seq": "8",
+          "service_type": "1",
+          "stop": "NOP"
+        }
+      ]
+    }
+  }
+}
