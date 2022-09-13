@@ -27,7 +27,7 @@ export class KmbDataService implements DataServiceBase {
         name: {
           en_US: stop.name_en,
           zh_CN: stop.name_sc,
-          zh_TW: stop.name_tc
+          zh_HK: stop.name_tc
         }
       }
       return [stop.stop, payload]
@@ -42,12 +42,12 @@ export class KmbDataService implements DataServiceBase {
         dest: {
           en_US: result.dest_en,
           zh_CN: result.dest_sc,
-          zh_TW: result.dest_tc
+          zh_HK: result.dest_tc
         },
         orig: {
           en_US: result.orig_en,
           zh_CN: result.orig_sc,
-          zh_TW: result.orig_tc
+          zh_HK: result.orig_tc
         },
         route: result.route,
         service_type: result.service_type,
@@ -74,7 +74,7 @@ export class KmbDataService implements DataServiceBase {
         rmk: {
           en_US: e.rmk_en,
           zh_CN: e.rmk_sc,
-          zh_TW: e.rmk_tc
+          zh_HK: e.rmk_tc
         }
       }
       return payload

@@ -3,7 +3,19 @@ import { GetAllInfoType } from '../../../type'
 import { calDistance } from '../../../util/cal.distance'
 import { convertEtaTime } from '../../../util/convert.eta.time'
 import { DataServiceFactory } from '../../../service'
-import { Card, CardContent, Grid, LinearProgress, Stack, Typography } from '@mui/material'
+import {
+  ListItem,
+  Card,
+  CardContent,
+  Grid,
+  LinearProgress,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  Stack,
+  Typography,
+  List
+} from '@mui/material'
 import NearMeIcon from '@mui/icons-material/NearMe'
 import NearMeDisabledIcon from '@mui/icons-material/NearMeDisabled'
 import { useSelector } from 'react-redux'
@@ -49,14 +61,14 @@ export function NearByPage (): JSX.Element {
         }
       })
       .sort((a, b) => a.nearStop.distance - b.nearStop.distance)
-      .slice(0, 200)
+      .slice(0, 10)
       .map(async (route, index) => {
         return {
           order: index,
           co: route.co,
           route: route.route,
-          label: `往${route.dest.zh_TW}`,
-          stop: route.nearStop.name.zh_TW,
+          dest: route.dest,
+          stop: route.nearStop.name,
           distance: `${(route.nearStop.distance * 1000).toFixed(0)}m`,
           eta: (await dataServiceFactory
             .getETA(route.co, route.nearStop.stopId, route.route, route.service_type))[0]
@@ -96,37 +108,22 @@ export function NearByPage (): JSX.Element {
           <LinearProgress variant="determinate" value={Math.round(timer / DEFAULT_REFRESH_SECONDS * 100)} />
         </CardContent>
       </Card>
+      <List
+          sx={{ width: '100%', bgcolor: 'background.paper' }}
+          subheader={<ListSubheader>Bus</ListSubheader>}
+      >
           {
             estimateList
-              ?.filter((e: any) => e.eta.eta != null)
               ?.map((e: any, index: any) => {
-                return <Card key={`bus-card-${index}`} raised={true}>
-                  <CardContent style={{ padding: '0.75rem 0.75rem 0.75rem 0.75rem' }}>
-                    <Grid container spacing={2}>
-                      <Grid item xs={7}>
-                        <Typography gutterBottom variant="subtitle1" component="div">
-                          [{e.co}] [{e.route}] {e.label}
-                        </Typography>
-                        {`${e.stop} (${e.distance})`}
-                      </Grid>
-                      <Grid item xs={5} sx={{ textAlign: 'right', margin: 'auto' }}>
-                        <Typography gutterBottom variant="subtitle1" component="div">
-                          {convertEtaTime(e.eta.eta, timer)}
-                          {
-                            e.eta.rmk?.zh_TW !== ''
-                              ? <>
-                                  <br/>
-                                  {e.eta.rmk?.zh_TW}
-                                </>
-                              : <></>
-                          }
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
+                const { message, time } = convertEtaTime(e.eta.eta, timer)
+                return <ListItem key={`bus-card-${index}`}>
+                  <div style={{ width: '3rem' }}>{e.route}</div>
+                  <ListItemText primary={<><span style={{ fontSize: '0.5rem' }}>往&nbsp;</span>{e.dest?.[state.lang]}</>} secondary={`${e.stop?.[state.lang]} - ${e.distance}`} />
+                  {message != null && <span style={{ fontSize: '0.5rem' }}>{message}&nbsp;</span>}{time}
+                </ListItem>
               })
           }
+      </List>
     </Stack>
   </>
 }

@@ -1,6 +1,7 @@
-import {Box, Tab, Tabs, Typography} from '@mui/material'
+import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { NearByPage } from '../near.by'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -20,7 +21,7 @@ function TabPanel (props: TabPanelProps): JSX.Element {
           {...other}
       >
         {value === index && (
-            <Box sx={{ p: 3 }}>
+            <Box sx={{ p: 0 }}>
               <Typography>{children}</Typography>
             </Box>
         )}
@@ -37,6 +38,7 @@ function a11yProps (index: number): Record<string, string> {
 
 export function TabView (): JSX.Element {
   const [value, setValue] = React.useState(0)
+  const { t } = useTranslation()
 
   const handleChange = (event: React.SyntheticEvent, newValue: number): void => {
     setValue(newValue)
@@ -45,7 +47,7 @@ export function TabView (): JSX.Element {
   return <>
     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
       <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-        <Tab label="Near By" {...a11yProps(0)} />
+        <Tab label={t<string>('tab.nearBy')} {...a11yProps(0)} />
       </Tabs>
     </Box>
     <TabPanel value={value} index={0}>

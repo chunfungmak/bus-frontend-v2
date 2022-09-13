@@ -1,8 +1,9 @@
 import { ActionModel } from './model/action.model'
 import { StateModel } from './model/state.model'
-import { Theme } from '../constant'
+import { LangEnum, Theme } from '../constant'
 
 const initState: StateModel = {
+  lang: LangEnum.zh_HK,
   theme: Theme.DARK
 }
 
