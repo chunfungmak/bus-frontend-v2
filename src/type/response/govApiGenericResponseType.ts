@@ -1,4 +1,4 @@
-export interface KmbGinericResponseType<T> {
+export interface GovApiGenericResponseType<T> {
   data: T
   generated_timestamp: Date
   type: string

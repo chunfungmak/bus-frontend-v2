@@ -4,7 +4,7 @@ import localforage from 'localforage'
 import { reducer } from './reducer'
 
 const persistConfig = {
-  key: 'bus-frontend-v2-localforage',
+  key: 'bus-frontend-v2',
   storage: localforage
 }
 

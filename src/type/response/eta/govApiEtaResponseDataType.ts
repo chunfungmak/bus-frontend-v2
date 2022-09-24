@@ -1,4 +1,4 @@
-export interface KmbEtaResponseDataType {
+export interface GovApiEtaResponseDataType {
   co: string
   route: string
   dir: string

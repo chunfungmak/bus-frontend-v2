@@ -1,1 +1,1 @@
-export * from './kmb.eta.response.data.type'
+export * from './govApiEtaResponseDataType'

@@ -8,7 +8,7 @@ export const convertEtaTime = (_time: string, dummy: any): {
   time?: string
   message?: string
 } => {
-  const eta = new Date(_time).getTime() - new Date().getTime()
+  const eta =_time != null ?( new Date(_time).getTime() - new Date().getTime()) : Number.MIN_SAFE_INTEGER
 
   const sign = eta >= 0 ? '' : '-'
   const etaMin = Math.abs(eta) / 1000 / 60

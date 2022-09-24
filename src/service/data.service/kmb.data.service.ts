@@ -3,7 +3,7 @@ import { DataServiceBase } from './data.service.base'
 import {
   GetETAType,
   GetInfoType,
-  KmbGinericResponseType,
+  GovApiGenericResponseType,
   KmbNameResponseDataType,
   KmbRoutesResponseDataType,
   KmbStopsResponseDataType,
@@ -13,13 +13,19 @@ import {
 import axios from 'axios'
 import { ApiConfig } from '../../config'
 import { CompanyEnum } from '../../constant'
-import { KmbEtaResponseDataType } from '../../type/response/eta'
+import { GovApiEtaResponseDataType } from '../../type'
+import {StateModel} from "../../store/model/state.model";
+import {store} from "../../store";
+import {StateAction} from "../../store/reducer";
 
 export class KmbDataService implements DataServiceBase {
   private readonly CO: CompanyEnum = CompanyEnum.KMB
 
   public async getInfo (): Promise<GetInfoType[]> {
-    const stopList: Record<string, StopType> = Object.fromEntries(await Promise.all((await axios.get<KmbGinericResponseType<KmbStopsResponseDataType[]>>(ApiConfig.kmb.stops)).data.data.map(stop => {
+    const memoryInfo = store.getState().data.info[this.CO]
+    if(memoryInfo != null) return memoryInfo
+
+    const stopList: Record<string, StopType> = Object.fromEntries(await Promise.all((await axios.get<GovApiGenericResponseType<KmbStopsResponseDataType[]>>(ApiConfig.kmb.stops)).data.data.map(stop => {
       const payload: StopType = {
         stopId: stop.stop,
         lat: Number(stop.lat),
@@ -33,9 +39,9 @@ export class KmbDataService implements DataServiceBase {
       return [stop.stop, payload]
     })))
 
-    const nameList = (await axios.get<KmbGinericResponseType<KmbNameResponseDataType[]>>(ApiConfig.kmb.name)).data.data
+    const nameList = (await axios.get<GovApiGenericResponseType<KmbNameResponseDataType[]>>(ApiConfig.kmb.name)).data.data
 
-    return (await axios.get<KmbGinericResponseType<KmbRoutesResponseDataType[]>>(ApiConfig.kmb.routes)).data.data.map(result => {
+    const resultPayload = (await axios.get<GovApiGenericResponseType<KmbRoutesResponseDataType[]>>(ApiConfig.kmb.routes)).data.data.map(result => {
       const payload: GetInfoType = {
         bound: result.bound,
         co: this.CO,
@@ -61,12 +67,21 @@ export class KmbDataService implements DataServiceBase {
             return stopSeqPayload
           }) ?? []
       }
+
       return payload
     })
+
+    store.dispatch({
+      type: StateAction.SET_DATA_INFO,
+      data: {
+        [this.CO]: resultPayload
+      }
+    })
+    return resultPayload
   }
 
   public async getEta (stopId: string, route: string, serviceType?: string): Promise<GetETAType[]> {
-    const { data } = (await axios.get<KmbGinericResponseType<KmbEtaResponseDataType[]>>(ApiConfig.kmb.eta + `${stopId}/${route}/${serviceType}`)).data
+    const { data } = (await axios.get<GovApiGenericResponseType<GovApiEtaResponseDataType[]>>(ApiConfig.kmb.eta + `${stopId}/${route}/${serviceType}`)).data
     return data.map(e => {
       const payload: GetETAType = {
         eta: e.eta,

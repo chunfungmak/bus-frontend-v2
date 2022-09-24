@@ -12,8 +12,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
-    <Provider store={store} key='Provider'>
-        <PersistGate loading={<></>} persistor={persistor} key='PersistGate'>
+    <Provider store={store}>
+        <PersistGate loading={<></>} persistor={persistor}>
             <App key='App'/>
         </PersistGate>
     </Provider>

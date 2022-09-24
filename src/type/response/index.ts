@@ -1,4 +1,5 @@
 export * from './routes'
 export * from './name'
 export * from './stops'
-export * from './kmb.gineric.response.type'
+export * from './eta'
+export * from './govApiGenericResponseType'

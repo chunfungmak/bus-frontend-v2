@@ -1,4 +1,4 @@
-import { DataServiceBase, KmbDataService } from './data.service'
+import {DataServiceBase, KmbDataService, NwfbDataService} from './data.service'
 import {GetAllInfoType, GetETAType} from '../type'
 import { CompanyEnum } from '../constant'
 
@@ -7,13 +7,11 @@ export class DataServiceFactory {
 
   constructor () {
     this.dataServices = {
-      kmb: new KmbDataService()
-      // nwfb: new NwfbDataService(),
+      kmb: new KmbDataService(),
+      nwfb: new NwfbDataService(),
       // ctb: new NwfbDataService(),
       // mtr: new MtrDataService()
     }
-
-    void this.getAllInfo()
   }
 
   public async getAllInfo (): Promise<GetAllInfoType> {

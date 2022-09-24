@@ -48,9 +48,13 @@ export function TabView (): JSX.Element {
     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
       <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
         <Tab label={t<string>('tab.nearBy')} {...a11yProps(0)} />
+        <Tab label={t<string>('tab.nearBy')} {...a11yProps(1)} />
       </Tabs>
     </Box>
     <TabPanel value={value} index={0}>
+      <NearByPage />
+    </TabPanel>
+    <TabPanel value={value} index={1}>
       <NearByPage />
     </TabPanel>
   </>
