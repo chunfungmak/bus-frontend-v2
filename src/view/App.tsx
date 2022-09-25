@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { StateModel } from '../store/model/state.model'
 import { TabView } from './pages/tab.view'
 import { store } from '../store'
-import { StateAction } from '../store/reducer'
+import { StateAction } from '../store/reducer/reducer'
 import { useTranslation } from 'react-i18next'
 
 export function App (): JSX.Element {

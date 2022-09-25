@@ -1,11 +1,8 @@
 import {CompanyEnum, LangEnum, Theme} from '../../constant'
 import {GeolocationType, GetInfoType} from '../../type'
 
-export interface StateModel {
-  lang: LangEnum
-  theme: Theme
-  geolocation?: GeolocationType
-  data: {
-    info: Partial<Record<CompanyEnum, GetInfoType[]>>
-  }
-}
+export type StateModel = {
+    lang: LangEnum
+    theme: Theme
+    geolocation?: GeolocationType
+} & Partial<Record<CompanyEnum, GetInfoType[]>>

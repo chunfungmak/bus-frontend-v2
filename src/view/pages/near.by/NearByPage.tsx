@@ -14,22 +14,39 @@ import {
     ListSubheader,
     Stack,
     Typography,
-    List
+    List,
+    Box,
+    ListItemButton
 } from '@mui/material'
 import NearMeIcon from '@mui/icons-material/NearMe'
 import NearMeDisabledIcon from '@mui/icons-material/NearMeDisabled'
 import {useSelector} from 'react-redux'
 import {StateModel} from '../../../store/model/state.model'
+import {FixedSizeList, ListChildComponentProps} from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer'
 import {merge} from "../../../util";
 
 const dataServiceFactory = new DataServiceFactory()
 
 const DEFAULT_REFRESH_SECONDS = (parseInt(import.meta.env.VITE_VAR_REFRESH_COUNTDOWN_DEFAULT) ?? 99) * 1000
 
+function renderRow(props: ListChildComponentProps) {
+    const {index, style} = props;
+
+    return (
+        <ListItem style={style} key={index} component="div" disablePadding>
+            <ListItemButton>
+                <ListItemText primary={`Item ${index + 1}`}/>
+            </ListItemButton>
+        </ListItem>
+    );
+}
+
 export function NearByPage(): JSX.Element {
     const state = useSelector((state: StateModel) => state)
 
     const [data, setData] = useState<GetAllInfoType>()
+    const [size, setSize] = useState<number>(10)
 
     useEffect(() => {
         void initData()
@@ -44,10 +61,9 @@ export function NearByPage(): JSX.Element {
 
     const getEtas = async (): Promise<void> => {
         if (data == null) return
-        console.log(Object.values(data) )
         setEstimateList((await Promise.all(Object.values(data)
             .reduce((acc, curVal) => {
-                return merge(acc, curVal)
+                return [...acc, ...curVal]
             }, [])
             .map(route => {
                 return {
@@ -62,8 +78,9 @@ export function NearByPage(): JSX.Element {
                         .sort((a, b) => a.distance - b.distance)[0] || 0
                 }
             })
+            .filter(e => e.nearStop.distance != null)
             .sort((a, b) => a.nearStop.distance - b.nearStop.distance)
-            // .slice(0, 200)
+            .slice(0, size)
             .map(async (route, index) => {
                 return {
                     order: index,
@@ -72,9 +89,8 @@ export function NearByPage(): JSX.Element {
                     dest: route.dest,
                     stop: route.nearStop.name,
                     distance: `${(route.nearStop.distance * 1000).toFixed(0)}m`,
-                    eta: null
-                    //(await dataServiceFactory
-                    // .getETA(route.co, route.nearStop.stopId, route.route, route.service_type))[0]
+                    eta: (await dataServiceFactory
+                        .getETA(route.co, route.nearStop.stopId, route.route, route.service_type))[0]
                 }
             })
         )))
@@ -111,24 +127,54 @@ export function NearByPage(): JSX.Element {
                     <LinearProgress variant="determinate" value={Math.round(timer / DEFAULT_REFRESH_SECONDS * 100)}/>
                 </CardContent>
             </Card>
-            <List
-                sx={{width: '100%', bgcolor: 'background.paper'}}
-                subheader={<ListSubheader>Bus</ListSubheader>}
-            >
+
+            <AutoSizer>
                 {
-                    estimateList
-                        ?.map((e: any, index: any) => {
-                            const {message, time} = convertEtaTime(e.eta?.eta, timer)
-                            return <ListItem key={`bus-card-${index}`}>
-                                <div style={{width: '3rem'}}>{e.co} {e.route}</div>
-                                <ListItemText primary={<><span
-                                    style={{fontSize: '0.5rem'}}>往&nbsp;</span>{e.dest?.[state.lang]}</>}
-                                              secondary={`${e.stop?.[state.lang]} - ${e.distance}`}/>
-                                {message != null && <span style={{fontSize: '0.5rem'}}>{message}&nbsp;</span>}{time}
-                            </ListItem>
-                        })
+                    ({width, height}) => (
+                        <Box
+                            className={'test'}
+                            sx={{width: '100%', height: height, maxWidth: width, bgcolor: 'background.paper'}}
+                        >
+                            <FixedSizeList
+                                height={height}
+                                width={width}
+                                itemSize={46}
+                                itemCount={200}
+                                overscanCount={5}
+                            >
+                                {renderRow}
+                            </FixedSizeList>
+                        </Box>
+
+                    )
                 }
-            </List>
+
+            </AutoSizer>
+
+            {/*<List*/}
+            {/*    sx={{*/}
+            {/*        width: '100%',*/}
+            {/*        bgcolor: 'background.paper',*/}
+            {/*        maxHeight: 'calc(100vh - 11rem)',*/}
+            {/*        position: 'relative',*/}
+            {/*        overflow: 'auto',*/}
+            {/*    }}*/}
+            {/*    subheader={<ListSubheader>Bus</ListSubheader>}*/}
+            {/*>*/}
+            {/*    {*/}
+            {/*        estimateList*/}
+            {/*            ?.map((e: any, index: any) => {*/}
+            {/*                const {message, time} = convertEtaTime(e.eta?.eta, timer)*/}
+            {/*                return <ListItem key={`bus-card-${index}`}>*/}
+            {/*                    <div style={{width: '3rem'}}>{e.route}</div>*/}
+            {/*                    <ListItemText primary={<><span*/}
+            {/*                        style={{fontSize: '0.5rem'}}>往&nbsp;</span>{e.dest?.[state.lang]}</>}*/}
+            {/*                                  secondary={`${e.co} ${e.stop?.[state.lang]} - ${e.distance}`}/>*/}
+            {/*                    {message != null && <span style={{fontSize: '0.5rem'}}>{message}&nbsp;</span>}{time}*/}
+            {/*                </ListItem>*/}
+            {/*            })*/}
+            {/*    }*/}
+            {/*</List>*/}
         </Stack>
     </>
 }

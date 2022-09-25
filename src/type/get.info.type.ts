@@ -28,4 +28,4 @@ export interface GetETAType {
   rmk?: LangType
 }
 
-export type GetAllInfoType = Record<CompanyEnum, GetInfoType[]>
+export type GetAllInfoType = Partial<Record<CompanyEnum, GetInfoType[]>>

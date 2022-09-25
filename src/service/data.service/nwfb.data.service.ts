@@ -15,7 +15,7 @@ import {merge} from "../../util";
 import pLimit from 'p-limit'
 import {store} from "../../store";
 import {StateModel} from "../../store/model/state.model";
-import {StateAction} from "../../store/reducer";
+import {StateAction} from "../../store/reducer/reducer";
 
 const BOUND_MAP = {
     I: "inbound",
@@ -32,8 +32,8 @@ export class NwfbDataService implements DataServiceBase {
     }
 
     public async getInfo(): Promise<GetInfoType[]> {
-        const memoryInfo = store.getState().data.info[this.CO]
-        if (memoryInfo != null) return memoryInfo
+        const memoryInfo = store.getState()[this.CO]
+        if (memoryInfo != null) return Object.assign([], memoryInfo)
 
         const outBoundRouteList = await Promise.all((await axios.get<GovApiGenericResponseType<NwfbRoutesResponseDataType[]>>(ApiConfig[this.CO].routes)).data.data.map(async result => {
             const payload: GetInfoType = {
@@ -65,18 +65,18 @@ export class NwfbDataService implements DataServiceBase {
             }
         }))
 
-        const limit1 = pLimit(2);
+        const limit1 = pLimit(50);
+        const limit2 = pLimit(50);
         const resultPayload = await Promise.all(fullRouteList.map(async (el) => {
             return limit1(async () => {
-                const limit2 = pLimit(5);
-                const stops = await Promise.all(((await axios.get<GovApiGenericResponseType<NwfbStopsResponseDataType[]>>(ApiConfig[this.CO].stop + `${el.route}/${BOUND_MAP[el.bound]}`)).data.data).map(async el2 => {
+                const stops = await Promise.all(((await axios.get<GovApiGenericResponseType<NwfbStopsResponseDataType[]>>(ApiConfig[this.CO].stop + `${el.route}/${BOUND_MAP[el.bound]}`)).data.data).map(async (el2) => {
                     return limit2(async () => {
                         const stopName = await this.getStopName(el2.stop)
                         const payload: StopSeqType = {
-                            seq: el2.seq,
+                            seq: Number(el2.seq),
                             stopId: el2.stop,
-                            lat: stopName.lat,
-                            long: stopName.long,
+                            lat: Number(stopName.lat),
+                            long: Number(stopName.long),
                             name: {
                                 en_US: stopName.name_en,
                                 zh_CN: stopName.name_sc,

@@ -1,4 +1,4 @@
-import { StateAction } from '../reducer'
+import { StateAction } from '../reducer/reducer'
 
 export interface ActionModel<T = any> {
   type: StateAction
